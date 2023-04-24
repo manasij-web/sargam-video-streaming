@@ -1,0 +1,24 @@
+      
+        <!-- <div>
+        <nav class="navbar navbar-light bg-light">
+          <a class="navbar-brand" href="#">
+            <img
+              src="/src/assets/images/bg1.jpg"
+              height="50"
+              alt=""
+              loading="lazy"/>
+          </a>
+      </nav>
+    </div> -->
+     
+
+       <!-- <div><img  src="/src/assets/images/logo.png" width="10%" height="90%"></div> -->
+       <div class="main">
+        <div (click)="gotourl('home')" [class.selected]="url === '/home'">Home</div>
+        <div (click)="gotourl('about-us')" [class.selected]="url === '/about-us'">AboutUs</div>
+        <!-- <div (click)="gotourl('client-register')"  [class.selected]="url === '/client-register'">Register</div> -->
+        <div (click)="gotourl('client-login')" [class.selected]="url === '/client-login'">UserLogin</div>
+        <div (click)="gotourl('admin-login')" [class.selected]="url === '/admin-login'">AdminLogin</div>
+        <div (click)="gotourl('contact-us')" [class.selected]="url === '/contact-us'">Contactus</div>
+        <!-- <div (click)="gotourl('watch/:id')" [class.selected]="url === '/watch/:id'">ViewVideo</div> -->
+    </div>

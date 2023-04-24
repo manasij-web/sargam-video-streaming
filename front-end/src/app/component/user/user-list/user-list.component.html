@@ -1,0 +1,19 @@
+<br />
+<mat-button-toggle-group [value]="selectedItem" (change)="onChangeToggle($event)">
+    <mat-button-toggle value="0">Sad</mat-button-toggle>
+    <mat-button-toggle value="1">Romantic</mat-button-toggle>
+    <mat-button-toggle value="2">Religious</mat-button-toggle>
+    <mat-button-toggle value="3">Patriotic</mat-button-toggle>
+    <mat-button-toggle value="4">Happy</mat-button-toggle>
+    <mat-button-toggle value="5">Light Music</mat-button-toggle>
+  </mat-button-toggle-group>
+<br />
+<div *ngIf="listFiles.length === 0">
+    There is not any video Avaiable currently
+</div>
+<div *ngIf="listFiles.length > 0">
+    <h1>Click And Play Video </h1>
+    <div *ngFor="let list of listFiles">
+        <div (click)="playVideo(list)" class="video-list">{{list?.videoName}}</div>
+    </div>
+</div>

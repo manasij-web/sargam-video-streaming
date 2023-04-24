@@ -1,0 +1,54 @@
+<br /><br />
+<div class="centered">
+    Select Cateogry :   <select [(ngModel)]="category" (change)="getProductByCategory()">
+        <option [value]="100">All</option>
+        <option *ngFor="let item of getCategoryList" [value]="item?.value">{{item?.name}}</option>
+    </select>
+</div>
+<br />
+<br />
+
+<div class="centered">
+    <div *ngIf="videoList.length===0">
+        No product is available in list
+    </div>
+    <div *ngIf="videoList.length>0">
+    <table border="1" class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Video Id</th>
+            <th scope="col">Video Name</th>
+            <th scope="col">Video Description</th>
+            <th scope="col">Video</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tr *ngFor="let video of videoList">
+            <td>{{video?.videoId}}</td>
+            <td>{{video?.videoName}}</td>
+            <td>{{video?.description}}</td>
+            <td><video [src]="video?.video"></video></td>
+            <td><iframe [src]="video?.video" ></iframe></td>
+            <td><input type ="text" [id]="video?.videoId" /></td>
+            <td>
+                <button (click)="addToWishlist(video)" mat-raised-button color="primary">Add to Wishlist</button>
+            </td>
+    </table>
+    </div>
+    
+</div>
+
+<br />
+<div *ngIf="videoList.length>0" class="centered">
+    <app-paging
+        [totalItem]="totalItem"
+        [pageSize]="pageSize"
+        [offset]="offset"
+        (onNextPageClick)="onNextPageClick($event)"
+        (onPreviousPageClick)="onPreviousPageClick($event)"
+        (onFirstPageClick)="onFirstPageClick($event)"
+        (onLastPageClick)="onLastPageClick($event)"
+    ></app-paging>
+</div>
+<br />
+

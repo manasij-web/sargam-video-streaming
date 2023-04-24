@@ -1,0 +1,21 @@
+<div>
+    <div>
+        Upload Video <input type="file" accept=".mp4" id="file"  (change)="onFileSelected($event.target)"/>
+    </div>
+    <br />
+   <div>
+    <select [(ngModel)]="category">
+        <option value="0">Sad</option>
+        <option value="1">Romantic</option>
+        <option value="2">Religious</option>
+        <option value="3">Patriotic</option>
+        <option value="4">Happy</option>
+        <option value="5">Light Music</option>
+    </select>
+   </div>
+   <br />
+   <div>
+       <button (click)="onSubmit()">Submit</button>
+   </div>
+    
+</div>

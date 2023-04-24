@@ -1,0 +1,28 @@
+<br /><br />
+<div *ngIf="wishList.length===0" class="centered">
+    No product available in cart
+</div>
+<div *ngIf="wishList.length>0" class="centered">
+<table border="1">
+    <tr>
+        <th>Video Name</th>
+        <th>Video</th>
+        <th>Description</th>
+        <th></th>
+        </tr>
+    <tr *ngFor="let wishList of wishList">
+        <td>{{wishList?.video?.videoName}}</td>
+        <video [src]=""></video>
+        <td><iframe  [src]="wishList?.video?.video" ></iframe></td>
+          <td>  <video [src]="wishList?.video?.video"></video> </td>
+        <td><button (click)="deleteWishlist(wishList)" mat-raised-button color="primary">Delete wishList</button></td>
+        
+
+
+    </tr>
+</table>
+
+</div>
+<br />
+<div class="centered" *ngIf="wishList.length!==0">
+</div>  
